@@ -1,6 +1,7 @@
 package test
 
 func Test() string {
-	return "Hello"
+	ans := "Hello golang"
+	return ans
 }
 
