@@ -1,0 +1,10 @@
+time="2022-05-27T02:16:10Z" level=warning msg="NEF config without log level setting!!!" category=Init component=NEF
+time="2022-05-27T02:16:10Z" level=info msg="config version [1.0.1]" category=CFG component=NEF
+time="2022-05-27T02:16:10Z" level=info msg=nef category=App component=NEF
+time="2022-05-27T02:16:10Z" level=info msg="NEF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.15.8 linux/amd64" category=App component=NEF
+time="2022-05-27T02:16:10Z" level=info msg="Server started" category=Init component=NEF
+time="2022-05-27T02:17:14Z" level=info msg="| 404 |       127.0.0.1 | GET     | //3gpp-service-parameter/v1/ | " category=GIN component=NEF
+time="2022-05-27T02:17:25Z" level=info msg="| 200 |       127.0.0.1 | GET     | /3gpp-service-parameter/v1/ | " category=GIN component=NEF
+time="2022-05-27T02:17:48Z" level=info msg="| 200 |       127.0.0.1 | GET     | /3gpp-service-parameter/v1/today/subscriptions | " category=GIN component=NEF
+time="2022-05-27T02:18:03Z" level=info msg="Terminating NEF..." category=Init component=NEF
+time="2022-05-27T02:18:03Z" level=info msg="NEF terminated" category=Init component=NEF
