@@ -18,9 +18,11 @@ var (
 	ContextLog    *logrus.Entry
 	HandlerLog    *logrus.Entry
 	SessionQosLog *logrus.Entry
+	ServParamLog  *logrus.Entry
 	UtilLog       *logrus.Entry
 	HttpLog       *logrus.Entry
 	ConsumerLog   *logrus.Entry
+	ProducerLog   *logrus.Entry
 	GinLog        *logrus.Entry
 )
 
@@ -42,9 +44,11 @@ func init() {
 	ContextLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "Context"})
 	HandlerLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "HDLR"})
 	SessionQosLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "SessionQos"})
+	ServParamLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "ServParam"})
 	UtilLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "Util"})
 	HttpLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "HTTP"})
 	ConsumerLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "Consumer"})
+	ProducerLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "Producer"})
 	GinLog = log.WithFields(logrus.Fields{"component": "NEF", "category": "GIN"})
 }
 

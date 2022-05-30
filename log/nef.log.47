@@ -1,0 +1,20 @@
+time="2022-05-30T07:38:07Z" level=warning msg="NEF config without log level setting!!!" category=Init component=NEF
+time="2022-05-30T07:38:07Z" level=info msg="config version [1.0.1]" category=CFG component=NEF
+time="2022-05-30T07:38:07Z" level=info msg=nef category=App component=NEF
+time="2022-05-30T07:38:07Z" level=info msg="NEF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.15.8 linux/amd64" category=App component=NEF
+time="2022-05-30T07:38:07Z" level=info msg="Server started" category=Init component=NEF
+time="2022-05-30T07:38:11Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T07:38:11Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-2/subscriptions | " category=GIN component=NEF
+time="2022-05-30T07:38:22Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T07:38:22Z" level=warning msg="Existed Scs As Data Context: [{SubscriptionId:1 ScsAsId:scsAsId-2 ScsAsDataContext:0xc000444120}]" category=Producer component=NEF
+time="2022-05-30T07:38:22Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions | " category=GIN component=NEF
+time="2022-05-30T07:38:25Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T07:38:25Z" level=warning msg="Existed Scs As Data Context: [{SubscriptionId:1 ScsAsId:scsAsId-2 ScsAsDataContext:0xc000444120} {SubscriptionId:2 ScsAsId:scsAsId-1 ScsAsDataContext:0xc0004bec60}]" category=Producer component=NEF
+time="2022-05-30T07:38:25Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions | " category=GIN component=NEF
+time="2022-05-30T07:38:54Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T07:38:54Z" level=warning msg="Existed Scs As Data Context: [{SubscriptionId:1 ScsAsId:scsAsId-2 ScsAsDataContext:0xc000444120} {SubscriptionId:2 ScsAsId:scsAsId-1 ScsAsDataContext:0xc0004bec60} {SubscriptionId:3 ScsAsId:scsAsId-1 ScsAsDataContext:0xc0004bf560}]" category=Producer component=NEF
+time="2022-05-30T07:38:54Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions | " category=GIN component=NEF
+time="2022-05-30T07:39:06Z" level=info msg="Terminating NEF..." category=Init component=NEF
+time="2022-05-30T07:39:06Z" level=info msg="Send Deregister NFInstance" category=App component=NEF
+time="2022-05-30T07:39:07Z" level=info msg="Deregister from NRF successfully" category=Init component=NEF
+time="2022-05-30T07:39:07Z" level=info msg="NEF terminated" category=Init component=NEF

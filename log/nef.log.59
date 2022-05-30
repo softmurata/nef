@@ -1,0 +1,30 @@
+time="2022-05-30T09:10:36Z" level=warning msg="NEF config without log level setting!!!" category=Init component=NEF
+time="2022-05-30T09:10:36Z" level=info msg="config version [1.0.1]" category=CFG component=NEF
+time="2022-05-30T09:10:36Z" level=info msg=nef category=App component=NEF
+time="2022-05-30T09:10:36Z" level=info msg="NEF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.15.8 linux/amd64" category=App component=NEF
+time="2022-05-30T09:10:36Z" level=info msg="Server started" category=Init component=NEF
+time="2022-05-30T09:10:52Z" level=info msg="| 404 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/1 | " category=GIN component=NEF
+time="2022-05-30T09:11:13Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Put Method" category=SessionQos component=NEF
+time="2022-05-30T09:11:13Z" level=info msg="| 201 |       127.0.0.1 | PUT     | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/1 | " category=GIN component=NEF
+time="2022-05-30T09:11:23Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Get Method" category=SessionQos component=NEF
+time="2022-05-30T09:11:23Z" level=info msg=" Handle 3GPPAsSessionWithQos Subscriptions SubscriptionId Get" category=Producer component=NEF
+time="2022-05-30T09:11:23Z" level=error msg="Cannot Find Scs As Data Context by subscription id and scs as id" category=Producer component=NEF
+time="2022-05-30T09:11:23Z" level=info msg="| 500 |       127.0.0.1 | GET     | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/2 | " category=GIN component=NEF
+time="2022-05-30T09:11:26Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Get Method" category=SessionQos component=NEF
+time="2022-05-30T09:11:26Z" level=info msg=" Handle 3GPPAsSessionWithQos Subscriptions SubscriptionId Get" category=Producer component=NEF
+time="2022-05-30T09:11:26Z" level=info msg="| 200 |       127.0.0.1 | GET     | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/1 | " category=GIN component=NEF
+time="2022-05-30T09:11:42Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Delete Method" category=SessionQos component=NEF
+time="2022-05-30T09:11:42Z" level=info msg="| 204 |       127.0.0.1 | DELETE  | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/1 | " category=GIN component=NEF
+time="2022-05-30T09:11:44Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Get Method" category=SessionQos component=NEF
+time="2022-05-30T09:11:44Z" level=info msg=" Handle 3GPPAsSessionWithQos Subscriptions SubscriptionId Get" category=Producer component=NEF
+time="2022-05-30T09:11:44Z" level=error msg="Cannot Find Scs As Data Context by subscription id and scs as id" category=Producer component=NEF
+time="2022-05-30T09:11:44Z" level=info msg="| 500 |       127.0.0.1 | GET     | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/1 | " category=GIN component=NEF
+time="2022-05-30T09:11:47Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Put Method" category=SessionQos component=NEF
+time="2022-05-30T09:11:47Z" level=info msg="| 201 |       127.0.0.1 | PUT     | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/1 | " category=GIN component=NEF
+time="2022-05-30T09:11:52Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Get Method" category=SessionQos component=NEF
+time="2022-05-30T09:11:52Z" level=info msg=" Handle 3GPPAsSessionWithQos Subscriptions SubscriptionId Get" category=Producer component=NEF
+time="2022-05-30T09:11:52Z" level=info msg="| 200 |       127.0.0.1 | GET     | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/1 | " category=GIN component=NEF
+time="2022-05-30T09:12:11Z" level=info msg="Terminating NEF..." category=Init component=NEF
+time="2022-05-30T09:12:11Z" level=info msg="Send Deregister NFInstance" category=App component=NEF
+time="2022-05-30T09:12:11Z" level=error msg="Deregister NF instance Error[server no response]" category=Init component=NEF
+time="2022-05-30T09:12:11Z" level=info msg="NEF terminated" category=Init component=NEF

@@ -45,6 +45,77 @@ type NEFContext struct {
 	SBIPort      int
 	NfService    map[models.ServiceName]models.NfService
 	NrfUri       string
+	// Scs As Level Pool          map[string]*models
+	// ScsAsPool sync.Map
+	ScsAsPool               map[string]*ScsAsData
+	SubscScsAsPool          map[string]*SubscriptionScsAsDataContext
+	SubscriptionIdGenerator int
+}
+
+type SubscriptionScsAsDataContext struct {
+	SubscriptionId   string
+	ScsAsId          string
+	ScsAsDataContext *models.ScsAsDataContextResponse
+}
+
+// Scs As Data
+type ScsAsData struct {
+	ScsAsId           string
+	ScsAsDataContexts []SubscriptionScsAsDataContext
+}
+
+func (c *NEFContext) FindScsAsDataContextsByScsAsId(scsAsId string) ([]SubscriptionScsAsDataContext, error) {
+	var selectedScsAsDataContexts []SubscriptionScsAsDataContext
+	var err error
+
+	if c.ScsAsPool == nil {
+		logger.ContextLog.Errorf(" Cannot find scs as pool")
+		return selectedScsAsDataContexts, err
+	}
+
+	for _, saData := range c.ScsAsPool {
+		saId := saData.ScsAsId
+
+		// fmt.Println("ScsAsId: ", saId)
+
+		if saId == scsAsId {
+			selectedScsAsDataContexts = saData.ScsAsDataContexts
+
+			// for check
+			for _, ssadContext := range saData.ScsAsDataContexts {
+				subscId := ssadContext.SubscriptionId
+				subscContext := ssadContext.ScsAsDataContext
+
+				fmt.Println("subscId: ", subscId)
+				fmt.Println("subscContext: ", subscContext)
+			}
+		}
+	}
+
+	return selectedScsAsDataContexts, err
+}
+
+func (c *NEFContext) FindScsAsDataContextByScsAsIdAndSubscriptionId(scsAsId string, subscriptionId string) (*models.ScsAsDataContextResponse, error) {
+	var selectedScsAsDataContext *models.ScsAsDataContextResponse
+	var err error
+
+	if c.SubscScsAsPool == nil {
+		logger.ContextLog.Errorf(" Cannot find subsc scs as pool")
+		return selectedScsAsDataContext, err
+	}
+
+	for _, subscSaData := range c.SubscScsAsPool {
+		saId := subscSaData.ScsAsId
+		subsId := subscSaData.SubscriptionId
+
+		if saId == scsAsId && subsId == subscriptionId {
+			fmt.Println("scsAsId: ", saId)
+			fmt.Println("subscriptionId: ", subsId)
+			selectedScsAsDataContext = subscSaData.ScsAsDataContext
+		}
+	}
+
+	return selectedScsAsDataContext, err
 }
 
 // Initialize NEF context with configuration factory
@@ -83,6 +154,10 @@ func InitNefContext() {
 		nefContext.NrfUri = fmt.Sprintf("%s://%s:%d", nefContext.UriScheme, "127.0.0.1", 29510)
 	}
 
+	nefContext.ScsAsPool = make(map[string]*ScsAsData)
+	nefContext.SubscScsAsPool = make(map[string]*SubscriptionScsAsDataContext)
+	nefContext.SubscriptionIdGenerator = 1
+
 }
 
 func initNfService(serviceName []models.ServiceName, version string) (nfService map[models.ServiceName]models.NfService) {
@@ -100,7 +175,7 @@ func initNfService(serviceName []models.ServiceName, version string) (nfService 
 			},
 			Scheme:          nefContext.UriScheme,
 			NfServiceStatus: models.NfServiceStatus_REGISTERED,
-			ApiPrefix:       GetIpv4Uri(),
+			ApiPrefix:       GetApiPrefix(),
 			IpEndPoints: &[]models.IpEndPoint{
 				{
 					Ipv4Address: nefContext.RegisterIPv4,
@@ -114,7 +189,11 @@ func initNfService(serviceName []models.ServiceName, version string) (nfService 
 	return
 }
 
-func GetIpv4Uri() string {
+func GetApiPrefix() string {
+	return fmt.Sprintf("%s://%s:%d", nefContext.UriScheme, nefContext.RegisterIPv4, nefContext.SBIPort)
+}
+
+func (context *NEFContext) GetIpv4Uri() string {
 	return fmt.Sprintf("%s://%s:%d", nefContext.UriScheme, nefContext.RegisterIPv4, nefContext.SBIPort)
 }
 

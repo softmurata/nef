@@ -20,6 +20,7 @@ import (
 	"github.com/softmurata/nef/internal/context"
 
 	"github.com/softmurata/nef/internal/sbi/assessionwithqos"
+	"github.com/softmurata/nef/internal/sbi/consumer"
 	"github.com/softmurata/nef/internal/sbi/serviceparameter"
 
 	"github.com/free5gc/util/httpwrapper"
@@ -140,20 +141,18 @@ func (nef *NEF) Start() {
 	context.InitNefContext()
 	addr := fmt.Sprintf("%s:%d", self.BindingIPv4, self.SBIPort)
 
-	/*
-		// ToDo: maybe not need unit test
-		addr := fmt.Sprintf("%s:%d", self.BindingIPv4, self.SBIPort)
-		profile, err := consumer.BuildNFProfile(self)
+	// ToDo: maybe not need unit test
+	// addr := fmt.Sprintf("%s:%d", self.BindingIPv4, self.SBIPort)
+	profile, err := consumer.BuildNFProfile(self)
 
-		if err != nil {
-			logger.InitLog.Error("Failed to build NSSF profile")
-		}
+	if err != nil {
+		logger.InitLog.Error("Failed to build NEF profile")
+	}
 
-		_, self.NfId, err = consumer.SendRegisterNFInstance(self.NrfUri, self.NfId, profile)
-		if err != nil {
-			logger.InitLog.Errorf("Failed to register NSSF to NRF: %s", err.Error())
-		}
-	*/
+	_, self.NfId, err = consumer.SendRegisterNFInstance(self.NrfUri, self.NfId, profile)
+	if err != nil {
+		logger.InitLog.Errorf("Failed to register NEF to NRF: %s", err.Error())
+	}
 
 	signalChannel := make(chan os.Signal, 1)
 	signal.Notify(signalChannel, os.Interrupt, syscall.SIGTERM)
@@ -259,17 +258,16 @@ func (nef *NEF) Exec(c *cli.Context) error {
 
 func (nef *NEF) Terminate() {
 	logger.InitLog.Infof("Terminating NEF...")
-	/*
-		// deregister with NRF
-		problemDetails, err := consumer.SendDeregisterNFInstance()
-		if problemDetails != nil {
-			logger.InitLog.Errorf("Deregister NF instance Failed Problem[%+v]", problemDetails)
-		} else if err != nil {
-			logger.InitLog.Errorf("Deregister NF instance Error[%+v]", err)
-		} else {
-			logger.InitLog.Infof("Deregister from NRF successfully")
-		}
-	*/
+
+	// deregister with NRF
+	problemDetails, err := consumer.SendDeregisterNFInstance()
+	if problemDetails != nil {
+		logger.InitLog.Errorf("Deregister NF instance Failed Problem[%+v]", problemDetails)
+	} else if err != nil {
+		logger.InitLog.Errorf("Deregister NF instance Error[%+v]", err)
+	} else {
+		logger.InitLog.Infof("Deregister from NRF successfully")
+	}
 
 	logger.InitLog.Infof("NEF terminated")
 }

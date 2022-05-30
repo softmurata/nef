@@ -1,0 +1,7 @@
+time="2022-05-30T04:25:00Z" level=warning msg="NEF config without log level setting!!!" category=Init component=NEF
+time="2022-05-30T04:25:00Z" level=info msg="config version [1.0.1]" category=CFG component=NEF
+time="2022-05-30T04:25:00Z" level=info msg=nef category=App component=NEF
+time="2022-05-30T04:25:00Z" level=info msg="NEF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.15.8 linux/amd64" category=App component=NEF
+time="2022-05-30T04:25:00Z" level=info msg="Server started" category=Init component=NEF
+time="2022-05-30T04:25:00Z" level=error msg="NEF register to NRF Error[Put \"http://127.0.0.10:8000/nnrf-nfm/v1/nf-instances/e655bf53-5bd5-46fd-826f-7dc696cca6ca\": dial tcp 127.0.0.10:8000: connect: connection refused]" category=Consumer component=NEF
+time="2022-05-30T04:25:02Z" level=error msg="NEF register to NRF Error[Put \"http://127.0.0.10:8000/nnrf-nfm/v1/nf-instances/e655bf53-5bd5-46fd-826f-7dc696cca6ca\": dial tcp 127.0.0.10:8000: connect: connection refused]" category=Consumer component=NEF

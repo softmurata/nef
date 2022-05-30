@@ -10,7 +10,7 @@ require (
 	github.com/gin-gonic/gin v1.7.7
 	github.com/google/uuid v1.3.0
 	github.com/sirupsen/logrus v1.8.1
-	github.com/softmurata/freeopenapi v0.0.0-20220527013526-0790e49dd678
+	github.com/softmurata/freeopenapi v0.0.0-20220530080025-44a7582bc4a1
 	github.com/urfave/cli v1.22.9
 	gopkg.in/yaml.v2 v2.2.8
 )

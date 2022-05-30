@@ -1,0 +1,14 @@
+time="2022-05-30T05:14:57Z" level=warning msg="NEF config without log level setting!!!" category=Init component=NEF
+time="2022-05-30T05:14:57Z" level=info msg="config version [1.0.1]" category=CFG component=NEF
+time="2022-05-30T05:14:57Z" level=info msg=nef category=App component=NEF
+time="2022-05-30T05:14:57Z" level=info msg="NEF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.15.8 linux/amd64" category=App component=NEF
+time="2022-05-30T05:14:57Z" level=info msg="Server started" category=Init component=NEF
+time="2022-05-30T05:15:02Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T05:15:02Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions | " category=GIN component=NEF
+time="2022-05-30T05:15:05Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T05:15:05Z" level=warning msg="Existed Scs As Data Context: &{FlowInfos:[{FlowId:1 FlowDescriptions:[permit out ip from any to 10.60.0.1 permit out 6 from 10.60.0.1/16 to 10.60.0.1]}] NotificationDestination:http://10.0.10.221:80/nnef-af-session-with-qos/v1/nfid/{id}/notification EthFlowInfos:[] QosReference:ref2 UeIpv4Addr:10.60.0.1 UeIpv6Addr: MacAddr: QosMonInfo:{ReqQosMonParams:[DOWNLINK UPLINK] RepFreqs:[] RepThreshDl:10 RepThreshUl:10 RepThreshRp:10 RepPeriod:10 WaitTime:10} SupportedFeatures:f0 Supi:imsi-208930000000003 Dnn:internet}" category=Consumer component=NEF
+time="2022-05-30T05:15:05Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions | " category=GIN component=NEF
+time="2022-05-30T05:15:31Z" level=info msg="Terminating NEF..." category=Init component=NEF
+time="2022-05-30T05:15:31Z" level=info msg="Send Deregister NFInstance" category=App component=NEF
+time="2022-05-30T05:15:31Z" level=error msg="Deregister NF instance Error[server no response]" category=Init component=NEF
+time="2022-05-30T05:15:31Z" level=info msg="NEF terminated" category=Init component=NEF

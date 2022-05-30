@@ -1,0 +1,14 @@
+time="2022-05-30T06:29:04Z" level=warning msg="NEF config without log level setting!!!" category=Init component=NEF
+time="2022-05-30T06:29:04Z" level=info msg="config version [1.0.1]" category=CFG component=NEF
+time="2022-05-30T06:29:04Z" level=info msg=nef category=App component=NEF
+time="2022-05-30T06:29:04Z" level=info msg="NEF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.15.8 linux/amd64" category=App component=NEF
+time="2022-05-30T06:29:04Z" level=info msg="Server started" category=Init component=NEF
+time="2022-05-30T06:29:07Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T06:29:07Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions | " category=GIN component=NEF
+time="2022-05-30T06:29:18Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T06:29:18Z" level=warning msg="Existed Scs As Data Context: &map[1:0xc0003fba40]" category=Producer component=NEF
+time="2022-05-30T06:29:18Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions | " category=GIN component=NEF
+time="2022-05-30T06:30:02Z" level=info msg="Terminating NEF..." category=Init component=NEF
+time="2022-05-30T06:30:02Z" level=info msg="Send Deregister NFInstance" category=App component=NEF
+time="2022-05-30T06:30:03Z" level=info msg="Deregister from NRF successfully" category=Init component=NEF
+time="2022-05-30T06:30:03Z" level=info msg="NEF terminated" category=Init component=NEF

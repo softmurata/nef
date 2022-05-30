@@ -1,0 +1,18 @@
+time="2022-05-30T08:30:23Z" level=warning msg="NEF config without log level setting!!!" category=Init component=NEF
+time="2022-05-30T08:30:23Z" level=info msg="config version [1.0.1]" category=CFG component=NEF
+time="2022-05-30T08:30:23Z" level=info msg=nef category=App component=NEF
+time="2022-05-30T08:30:23Z" level=info msg="NEF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.15.8 linux/amd64" category=App component=NEF
+time="2022-05-30T08:30:23Z" level=info msg="Server started" category=Init component=NEF
+time="2022-05-30T08:30:29Z" level=info msg="Handle 3GPP As Session With Qos Subscriptions Post" category=SessionQos component=NEF
+time="2022-05-30T08:30:29Z" level=info msg="| 201 |       127.0.0.1 | POST    | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions | " category=GIN component=NEF
+time="2022-05-30T08:30:30Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Get Method" category=SessionQos component=NEF
+time="2022-05-30T08:30:30Z" level=info msg=" Handle 3GPPAsSessionWithQos Subscriptions SubscriptionId Get" category=Producer component=NEF
+time="2022-05-30T08:30:30Z" level=error msg="Cannot Find Scs As Data Context by subscription id and scs as id" category=Producer component=NEF
+time="2022-05-30T08:30:30Z" level=info msg="| 500 |       127.0.0.1 | GET     | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/2 | " category=GIN component=NEF
+time="2022-05-30T08:30:36Z" level=info msg="HTTP3GPPAsSessionWithQosSubscriptionsSubscriptionId Get Method" category=SessionQos component=NEF
+time="2022-05-30T08:30:36Z" level=info msg=" Handle 3GPPAsSessionWithQos Subscriptions SubscriptionId Get" category=Producer component=NEF
+time="2022-05-30T08:30:36Z" level=info msg="| 200 |       127.0.0.1 | GET     | /3gpp-as-session-with-qos/v1/scsAsId-1/subscriptions/1 | " category=GIN component=NEF
+time="2022-05-30T08:30:42Z" level=info msg="Terminating NEF..." category=Init component=NEF
+time="2022-05-30T08:30:42Z" level=info msg="Send Deregister NFInstance" category=App component=NEF
+time="2022-05-30T08:30:43Z" level=info msg="Deregister from NRF successfully" category=Init component=NEF
+time="2022-05-30T08:30:43Z" level=info msg="NEF terminated" category=Init component=NEF
